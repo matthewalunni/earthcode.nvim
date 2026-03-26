@@ -5,8 +5,10 @@ M.bg          = "#000000"  -- Black — main editor background
 M.cursorline  = "#111111"  -- Neutral dark — no hue conflict with syntax
 M.visual      = "#414833"  -- Ebony — visual selection, borders, float bg
 M.diff_del_bg = "#582f0e"  -- Dark Walnut — diff delete background
+M.diff_add_bg = "#0a1a0a"  -- Blended dark green — diff add background
+M.diff_chg_bg = "#1a1209"  -- Blended dark amber — diff change background
 M.ui_dark     = "#333d29"  -- Charcoal Brown — statusline, indent lines
-M.ui_mid      = "#414833"  -- Ebony — separators, context indent
+M.ui_mid      = "#414833"  -- Ebony — separators, context indent (same hue as visual by design)
 
 -- Foreground / syntax
 M.fg          = "#c2c5aa"  -- Dry Sage (light) — main text, identifiers, functions
