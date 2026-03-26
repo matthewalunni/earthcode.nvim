@@ -68,6 +68,18 @@ else
   ok("earthcode.load() runs without error")
 end
 
+-- base UI groups
+local base_groups = {
+  "Normal", "NormalFloat", "NormalNC", "CursorLine", "CursorLineNr",
+  "Visual", "Search", "IncSearch", "StatusLine", "StatusLineNC",
+  "WinSeparator", "VertSplit", "LineNr", "SignColumn",
+  "Pmenu", "PmenuSel", "PmenuSbar", "PmenuThumb",
+  "Folded", "TabLine", "TabLineSel", "TabLineFill",
+}
+for _, name in ipairs(base_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
