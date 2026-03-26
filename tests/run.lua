@@ -112,6 +112,18 @@ for _, name in ipairs(lsp_groups) do
   assert_hl_set(name)
 end
 
+-- telescope
+local telescope_groups = {
+  "TelescopeBorder", "TelescopeNormal",
+  "TelescopePromptNormal", "TelescopePromptBorder", "TelescopePromptTitle",
+  "TelescopeResultsBorder", "TelescopeResultsTitle",
+  "TelescopePreviewBorder", "TelescopePreviewTitle",
+  "TelescopeSelection", "TelescopeSelectionCaret", "TelescopeMatching",
+}
+for _, name in ipairs(telescope_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
