@@ -155,6 +155,17 @@ for _, name in ipairs(bufferline_groups) do
   assert_hl_set(name)
 end
 
+-- nvim-tree
+local nvimtree_groups = {
+  "NvimTreeNormal", "NvimTreeEndOfBuffer", "NvimTreeFolderIcon",
+  "NvimTreeFolderName", "NvimTreeOpenedFolderName", "NvimTreeRootFolder",
+  "NvimTreeIndentMarker", "NvimTreeGitDirty", "NvimTreeGitNew",
+  "NvimTreeGitDeleted", "NvimTreeSpecialFile", "NvimTreeExecFile",
+}
+for _, name in ipairs(nvimtree_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
