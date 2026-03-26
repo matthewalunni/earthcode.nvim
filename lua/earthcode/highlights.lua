@@ -91,6 +91,41 @@ function M.load(c)
   hi("@namespace",             { fg = c.type })
   hi("@constructor",           { fg = c.type })
   hi("@include",               { fg = c.parameter })
+
+  -- ── LSP diagnostics ────────────────────────────────────────────────────
+  hi("DiagnosticError",          { fg = c.error })
+  hi("DiagnosticWarn",           { fg = c.warning })
+  hi("DiagnosticInfo",           { fg = c.hint })
+  hi("DiagnosticHint",           { fg = c.hint })
+  hi("DiagnosticUnderlineError", { undercurl = true, sp = c.error })
+  hi("DiagnosticUnderlineWarn",  { undercurl = true, sp = c.warning })
+  hi("DiagnosticUnderlineInfo",  { undercurl = true, sp = c.hint })
+  hi("DiagnosticUnderlineHint",  { undercurl = true, sp = c.hint })
+  hi("LspReferenceText",         { bg = c.cursorline })
+  hi("LspReferenceRead",         { bg = c.cursorline })
+  hi("LspReferenceWrite",        { bg = c.cursorline })
+
+  -- ── LSP semantic tokens ────────────────────────────────────────────
+  hi("@lsp.type.keyword",    { link = "@keyword" })
+  hi("@lsp.type.string",     { link = "@string" })
+  hi("@lsp.type.comment",    { link = "@comment" })
+  hi("@lsp.type.variable",   { link = "@variable" })
+  hi("@lsp.type.function",   { link = "@function" })
+  hi("@lsp.type.method",     { link = "@method" })
+  hi("@lsp.type.parameter",  { link = "@parameter" })
+  hi("@lsp.type.type",       { link = "@type" })
+  hi("@lsp.type.class",      { link = "@type" })
+  hi("@lsp.type.interface",  { link = "@type" })
+  hi("@lsp.type.namespace",  { link = "@namespace" })
+  hi("@lsp.type.property",   { link = "@property" })
+  hi("@lsp.type.number",     { link = "@number" })
+  hi("@lsp.type.operator",   { link = "@operator" })
+
+  -- ── Diff ───────────────────────────────────────────────────────────
+  hi("DiffAdd",    { fg = c.hint,    bg = c.diff_add_bg })
+  hi("DiffChange", { fg = c.warning, bg = c.diff_chg_bg })
+  hi("DiffDelete", { fg = c.error,   bg = c.diff_del_bg })
+  hi("DiffText",   { fg = c.fg,      bg = c.diff_chg_bg })
 end
 
 return M

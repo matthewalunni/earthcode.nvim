@@ -93,6 +93,18 @@ for _, name in ipairs(syntax_groups) do
   assert_hl_set(name)
 end
 
+-- LSP, diagnostics, diff
+local lsp_groups = {
+  "DiagnosticError", "DiagnosticWarn", "DiagnosticInfo", "DiagnosticHint",
+  "DiagnosticUnderlineError", "DiagnosticUnderlineWarn",
+  "DiagnosticUnderlineInfo", "DiagnosticUnderlineHint",
+  "LspReferenceText", "LspReferenceRead", "LspReferenceWrite",
+  "DiffAdd", "DiffChange", "DiffDelete", "DiffText",
+}
+for _, name in ipairs(lsp_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
