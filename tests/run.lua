@@ -42,7 +42,8 @@ if not palette_ok then
   fail("could not load earthcode.palette: " .. tostring(c))
 else
   local required_keys = {
-    "bg", "cursorline", "visual", "diff_del_bg", "ui_dark", "ui_mid",
+    "bg", "cursorline", "visual", "float_bg",
+    "diff_del_bg", "diff_add_bg", "diff_chg_bg", "ui_dark", "ui_mid",
     "fg", "keyword", "string", "type", "parameter", "punctuation",
     "comment", "error", "warning", "hint",
   }
