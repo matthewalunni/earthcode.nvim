@@ -80,6 +80,19 @@ for _, name in ipairs(base_groups) do
   assert_hl_set(name)
 end
 
+-- syntax + treesitter groups
+local syntax_groups = {
+  "Comment", "Keyword", "Statement", "Conditional", "Repeat",
+  "String", "Character", "Identifier", "Function", "Type",
+  "Constant", "Number", "Boolean", "Operator", "Delimiter", "Special",
+  "@keyword", "@string", "@comment", "@variable", "@function",
+  "@parameter", "@type", "@number", "@boolean", "@operator",
+  "@punctuation.bracket", "@punctuation.delimiter",
+}
+for _, name in ipairs(syntax_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
