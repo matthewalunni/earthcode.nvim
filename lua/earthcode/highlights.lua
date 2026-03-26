@@ -7,7 +7,7 @@ end
 function M.load(c)
   -- ── Base UI ────────────────────────────────────────────────────────
   hi("Normal",        { fg = c.fg,      bg = c.bg })
-  hi("NormalFloat",   { fg = c.fg,      bg = c.visual })
+  hi("NormalFloat",   { fg = c.fg,      bg = c.float_bg })
   hi("NormalNC",      { fg = c.fg,      bg = c.bg })
   hi("CursorLine",    { bg = c.cursorline })
   hi("CursorLineNr",  { fg = c.keyword, bg = c.cursorline })
@@ -17,7 +17,7 @@ function M.load(c)
   hi("StatusLine",    { fg = c.fg,      bg = c.ui_dark })
   hi("StatusLineNC",  { fg = c.comment, bg = c.ui_dark })
   hi("WinSeparator",  { fg = c.ui_mid })
-  hi("VertSplit",     { fg = c.ui_mid })
+  hi("VertSplit",     { fg = c.ui_mid })  -- deprecated alias for WinSeparator, kept for compat
   hi("LineNr",        { fg = c.comment })
   hi("SignColumn",    { bg = c.bg })
   hi("Pmenu",         { fg = c.fg,      bg = c.ui_dark })
