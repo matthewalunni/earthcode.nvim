@@ -166,6 +166,16 @@ for _, name in ipairs(nvimtree_groups) do
   assert_hl_set(name)
 end
 
+-- gitsigns
+local gitsigns_groups = {
+  "GitSignsAdd", "GitSignsChange", "GitSignsDelete",
+  "GitSignsAddNr", "GitSignsChangeNr", "GitSignsDeleteNr",
+  "GitSignsAddLn", "GitSignsChangeLn", "GitSignsDeleteLn",
+}
+for _, name in ipairs(gitsigns_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
