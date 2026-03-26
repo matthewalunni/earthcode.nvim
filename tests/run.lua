@@ -58,6 +58,16 @@ else
   assert_eq("palette.hint",    c.hint,    "#6b8c6b")
 end
 
+-- init: load() runs without error
+local init_ok, init_err = pcall(function()
+  require("earthcode").load()
+end)
+if not init_ok then
+  fail("earthcode.load() raised an error: " .. tostring(init_err))
+else
+  ok("earthcode.load() runs without error")
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
