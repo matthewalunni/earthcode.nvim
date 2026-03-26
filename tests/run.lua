@@ -36,6 +36,27 @@ local function assert_hl_set(name)
 end
 
 -- ── tests go here ────────────────────────────────────────────────────
+-- palette
+local palette_ok, c = pcall(require, "earthcode.palette")
+if not palette_ok then
+  fail("could not load earthcode.palette: " .. tostring(c))
+else
+  local required_keys = {
+    "bg", "cursorline", "visual", "diff_del_bg", "ui_dark", "ui_mid",
+    "fg", "keyword", "string", "type", "parameter", "punctuation",
+    "comment", "error", "warning", "hint",
+  }
+  for _, key in ipairs(required_keys) do
+    assert_not_nil("palette." .. key, c[key])
+  end
+  assert_eq("palette.bg",      c.bg,      "#000000")
+  assert_eq("palette.fg",      c.fg,      "#c2c5aa")
+  assert_eq("palette.keyword", c.keyword, "#936639")
+  assert_eq("palette.string",  c.string,  "#a68a64")
+  assert_eq("palette.error",   c.error,   "#8b3a3a")
+  assert_eq("palette.warning", c.warning, "#b5803a")
+  assert_eq("palette.hint",    c.hint,    "#6b8c6b")
+end
 
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
