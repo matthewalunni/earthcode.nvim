@@ -143,6 +143,18 @@ else
   end
 end
 
+-- bufferline
+local bufferline_groups = {
+  "BufferLineFill", "BufferLineBackground", "BufferLineSelected",
+  "BufferLineIndicatorSelected", "BufferLineSeparator",
+  "BufferLineSeparatorSelected", "BufferLineModified",
+  "BufferLineModifiedSelected", "BufferLineCloseButton",
+  "BufferLineCloseButtonSelected",
+}
+for _, name in ipairs(bufferline_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
