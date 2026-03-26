@@ -124,6 +124,25 @@ for _, name in ipairs(telescope_groups) do
   assert_hl_set(name)
 end
 
+-- lualine: theme table structure
+local lualine_ok, lualine_mod = pcall(require, "earthcode.integrations.lualine")
+if not lualine_ok then
+  fail("could not load lualine integration: " .. tostring(lualine_mod))
+else
+  local theme_ok, theme = pcall(lualine_mod.theme)
+  if not theme_ok then
+    fail("lualine.theme() raised an error: " .. tostring(theme))
+  else
+    local modes = { "normal", "insert", "visual", "replace", "command", "inactive" }
+    for _, mode in ipairs(modes) do
+      assert_not_nil("lualine.theme." .. mode,            theme[mode])
+      assert_not_nil("lualine.theme." .. mode .. ".a",    theme[mode] and theme[mode].a)
+      assert_not_nil("lualine.theme." .. mode .. ".a.fg", theme[mode] and theme[mode].a and theme[mode].a.fg)
+      assert_not_nil("lualine.theme." .. mode .. ".a.bg", theme[mode] and theme[mode].a and theme[mode].a.bg)
+    end
+  end
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
