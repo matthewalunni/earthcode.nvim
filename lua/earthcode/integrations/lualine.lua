@@ -1,8 +1,11 @@
+-- Lualine integration for earthcode.nvim.
+-- ARCHITECTURE NOTE: This module is unique — load() is intentionally a no-op.
+-- Lualine manages its own highlight groups; wire the theme manually:
+--   require("lualine").setup({ theme = require("earthcode.integrations.lualine").theme() })
+-- theme() returns a snapshot of the current palette at call time (not a live table).
 local M = {}
 
--- Returns a lualine theme table.
--- Usage in your lualine config:
---   require("lualine").setup({ theme = require("earthcode.integrations.lualine").theme() })
+-- Returns a lualine theme table (palette snapshot — not live-updated).
 function M.theme()
   local c = require("earthcode.palette")
   return {
