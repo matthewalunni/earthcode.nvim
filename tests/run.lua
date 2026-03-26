@@ -100,6 +100,13 @@ local lsp_groups = {
   "DiagnosticUnderlineInfo", "DiagnosticUnderlineHint",
   "LspReferenceText", "LspReferenceRead", "LspReferenceWrite",
   "DiffAdd", "DiffChange", "DiffDelete", "DiffText",
+  "@lsp.type.keyword", "@lsp.type.string", "@lsp.type.comment",
+  "@lsp.type.variable", "@lsp.type.function", "@lsp.type.method",
+  "@lsp.type.parameter", "@lsp.type.type", "@lsp.type.class",
+  "@lsp.type.interface", "@lsp.type.namespace", "@lsp.type.property",
+  "@lsp.type.number", "@lsp.type.operator",
+  "@lsp.type.enum", "@lsp.type.enumMember",
+  "@lsp.type.decorator", "@lsp.type.macro",
 }
 for _, name in ipairs(lsp_groups) do
   assert_hl_set(name)

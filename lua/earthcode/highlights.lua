@@ -95,7 +95,7 @@ function M.load(c)
   -- ── LSP diagnostics ────────────────────────────────────────────────────
   hi("DiagnosticError",          { fg = c.error })
   hi("DiagnosticWarn",           { fg = c.warning })
-  hi("DiagnosticInfo",           { fg = c.hint })
+  hi("DiagnosticInfo",           { fg = c.hint })  -- intentionally same as Hint; no distinct info color in palette
   hi("DiagnosticHint",           { fg = c.hint })
   hi("DiagnosticUnderlineError", { undercurl = true, sp = c.error })
   hi("DiagnosticUnderlineWarn",  { undercurl = true, sp = c.warning })
@@ -118,8 +118,12 @@ function M.load(c)
   hi("@lsp.type.interface",  { link = "@type" })
   hi("@lsp.type.namespace",  { link = "@namespace" })
   hi("@lsp.type.property",   { link = "@property" })
-  hi("@lsp.type.number",     { link = "@number" })
-  hi("@lsp.type.operator",   { link = "@operator" })
+  hi("@lsp.type.number",       { link = "@number" })
+  hi("@lsp.type.operator",     { link = "@operator" })
+  hi("@lsp.type.enum",         { link = "@type" })
+  hi("@lsp.type.enumMember",   { link = "@variable" })
+  hi("@lsp.type.decorator",    { link = "@parameter" })
+  hi("@lsp.type.macro",        { link = "@keyword" })
 
   -- ── Diff ───────────────────────────────────────────────────────────
   hi("DiffAdd",    { fg = c.hint,    bg = c.diff_add_bg })
