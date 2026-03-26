@@ -176,6 +176,12 @@ for _, name in ipairs(gitsigns_groups) do
   assert_hl_set(name)
 end
 
+-- indent-blankline (ibl v3)
+local ibl_groups = { "IblIndent", "IblScope" }
+for _, name in ipairs(ibl_groups) do
+  assert_hl_set(name)
+end
+
 -- ── report ───────────────────────────────────────────────────────────
 if #failures > 0 then
   for _, msg in ipairs(failures) do print(msg) end
