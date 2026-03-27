@@ -9,6 +9,7 @@ function M.load()
   require("earthcode.integrations.nvim_tree").load(c)
   require("earthcode.integrations.gitsigns").load(c)
   require("earthcode.integrations.indent_blankline").load(c)
+  require("earthcode.integrations.mini_icons").load(c)
 end
 
 return M

@@ -7,7 +7,9 @@ end
 function M.load(c)
   -- ── Base UI ────────────────────────────────────────────────────────
   hi("Normal",        { fg = c.fg,      bg = c.bg })
-  hi("NormalFloat",   { fg = c.fg,      bg = c.float_bg })
+  hi("NormalFloat",   { fg = c.fg,      bg = c.bg })
+  hi("FloatBorder",   { fg = c.ui_mid })
+  hi("FloatTitle",    { fg = c.keyword })
   hi("NormalNC",      { fg = c.fg,      bg = c.bg })
   hi("CursorLine",    { bg = c.cursorline })
   hi("CursorLineNr",  { fg = c.keyword, bg = c.cursorline })
@@ -28,6 +30,7 @@ function M.load(c)
   hi("TabLine",       { fg = c.comment, bg = c.ui_dark })
   hi("TabLineSel",    { fg = c.fg,      bg = c.bg })
   hi("TabLineFill",   { bg = c.ui_dark })
+  hi("Title",         { fg = c.keyword, bold = true })
 
   -- ── Legacy syntax ──────────────────────────────────────────────────────
   hi("Comment",      { fg = c.comment,     italic = true })
@@ -124,6 +127,30 @@ function M.load(c)
   hi("@lsp.type.enumMember",   { link = "@variable" })
   hi("@lsp.type.decorator",    { link = "@parameter" })
   hi("@lsp.type.macro",        { link = "@keyword" })
+
+  -- ── Noice ──────────────────────────────────────────────────────────
+  hi("NoiceCmdlinePopup",              { fg = c.fg,      bg = c.bg })
+  hi("NoiceCmdlinePopupBorder",        { fg = c.ui_mid })
+  hi("NoiceCmdlinePopupBorderCmdline", { fg = c.ui_mid })
+  hi("NoiceCmdlinePopupBorderSearch",  { fg = c.warning })
+  hi("NoiceCmdlinePopupBorderFilter",  { fg = c.hint })
+  hi("NoiceCmdlinePopupBorderHelp",    { fg = c.comment })
+  hi("NoiceCmdlinePopupBorderLua",     { fg = c.keyword })
+  hi("NoiceCmdlinePopupTitle",         { fg = c.keyword })
+  hi("NoiceCmdlineIcon",               { fg = c.keyword })
+  hi("NoiceCmdlineIconSearch",         { fg = c.warning })
+
+  -- ── Snacks dashboard ───────────────────────────────────────────────
+  hi("SnacksDashboardHeader",  { fg = c.keyword,    bold = true })
+  hi("SnacksDashboardTitle",   { fg = c.keyword,    bold = true })
+  hi("SnacksDashboardDesc",    { fg = c.parameter })
+  hi("SnacksDashboardKey",     { fg = c.warning })
+  hi("SnacksDashboardIcon",    { fg = c.hint })
+  hi("SnacksDashboardFooter",  { fg = c.comment })
+  hi("SnacksDashboardDir",     { fg = c.comment })
+  hi("SnacksDashboardFile",    { fg = c.fg })
+  hi("SnacksDashboardNormal",  { fg = c.fg,         bg = c.bg })
+  hi("SnacksDashboardSpecial", { fg = c.parameter })
 
   -- ── Diff ───────────────────────────────────────────────────────────
   hi("DiffAdd",    { fg = c.hint,    bg = c.diff_add_bg })
