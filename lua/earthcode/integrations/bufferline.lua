@@ -2,7 +2,7 @@ local M = {}
 
 function M.load(c)
   local function hi(name, opts) vim.api.nvim_set_hl(0, name, opts) end
-  hi("BufferLineFill",                { bg = c.ui_dark })
+  hi("BufferLineFill",                { bg = c.bg })
   hi("BufferLineBackground",          { fg = c.comment,  bg = c.ui_dark })
   hi("BufferLineSelected",            { fg = c.fg,       bg = c.bg,      bold = true })
   hi("BufferLineIndicatorSelected",   { fg = c.keyword,  bg = c.bg })
