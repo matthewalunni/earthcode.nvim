@@ -172,6 +172,12 @@ function M.load(c)
   hi("RenderMarkdownCode",        { bg = c.code_bg })
   hi("RenderMarkdownCodeInline",  { bg = c.code_bg })
 
+  -- ── Snacks picker ─────────────────────────────────────────────────
+  hi("SnacksPickerListCursorLine", { fg = c.fg,      bg = c.visual })
+  hi("SnacksPickerDir",            { fg = c.comment })
+  hi("SnacksPickerFile",           { fg = c.fg })
+  hi("SnacksPickerMatch",          { fg = c.warning, bold = true })
+
   -- ── Snacks dashboard ───────────────────────────────────────────────
   hi("SnacksDashboardHeader",  { fg = c.keyword,    bold = true })
   hi("SnacksDashboardTitle",   { fg = c.keyword,    bold = true })
