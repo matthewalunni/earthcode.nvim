@@ -22,13 +22,14 @@ earthcode.nvim is a pure-Lua Neovim colorscheme with a black primary background 
 | Diff change bg | `#1a1209` | Blended dark amber |
 | UI chrome dark | `#333d29` | Charcoal Brown |
 | UI chrome mid | `#414833` | Ebony |
-| Foreground / identifiers / functions | `#c2c5aa` | Dry Sage (light) |
+| Foreground / identifiers | `#c2c5aa` | Dry Sage (light) |
+| Functions / methods | `#dcb872` | Goldenrod |
 | Keywords | `#be8b58` | Toffee Brown |
-| Strings | `#a68a64` | Camel |
-| Types / classes / constants / numbers | `#b6ad90` | Khaki Beige |
+| Strings | `#a8b878` | Olive Green |
+| Types / classes / constants / numbers | `#8fb3a0` | Lichen |
 | Parameters | `#a4ac86` | Dry Sage (mid) |
 | Punctuation / operators | `#af6d32` | Saddle Brown |
-| Comments | `#727b53` | Dusty Olive |
+| Comments | `#7f895c` | Dusty Olive |
 
 #### Accent Colors
 
@@ -36,7 +37,7 @@ earthcode.nvim is a pure-Lua Neovim colorscheme with a black primary background 
 |---|---|---|
 | Error / diff delete fg | `#ba5a5a` | Muted brick red |
 | Warning / diff change | `#b5803a` | Warm amber |
-| Hint / info | `#6b8c6b` | Forest green |
+| Hint / info | `#7e9d7e` | Forest green |
 
 ## Features
 

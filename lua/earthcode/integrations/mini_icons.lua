@@ -5,7 +5,7 @@ function M.load(c)
   hi("MiniIconsGreen",  { fg = c.hint })       -- forest green
   hi("MiniIconsRed",    { fg = c.error })      -- muted brick
   hi("MiniIconsOrange", { fg = c.warning })    -- warm amber
-  hi("MiniIconsYellow", { fg = c.string })     -- camel / golden
+  hi("MiniIconsYellow", { fg = c.func })       -- goldenrod
   hi("MiniIconsGrey",   { fg = c.comment })    -- dusty olive
   hi("MiniIconsAzure",  { fg = "#7a9e9e" })    -- muted teal (no azure in palette)
   hi("MiniIconsBlue",   { fg = "#788fa0" })    -- slate (no blue in palette)

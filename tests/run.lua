@@ -44,7 +44,7 @@ else
   local required_keys = {
     "bg", "cursorline", "visual", "float_bg",
     "diff_del_bg", "diff_add_bg", "diff_chg_bg", "ui_dark", "ui_mid",
-    "fg", "keyword", "string", "type", "parameter", "punctuation",
+    "fg", "func", "keyword", "string", "type", "parameter", "punctuation",
     "comment", "error", "warning", "hint",
   }
   for _, key in ipairs(required_keys) do
@@ -53,10 +53,11 @@ else
   assert_eq("palette.bg",      c.bg,      "#000000")
   assert_eq("palette.fg",      c.fg,      "#c2c5aa")
   assert_eq("palette.keyword", c.keyword, "#be8b58")
-  assert_eq("palette.string",  c.string,  "#a68a64")
+  assert_eq("palette.string",  c.string,  "#a8b878")
   assert_eq("palette.error",   c.error,   "#ba5a5a")
   assert_eq("palette.warning", c.warning, "#b5803a")
-  assert_eq("palette.hint",    c.hint,    "#6b8c6b")
+  assert_eq("palette.hint",    c.hint,    "#7e9d7e")
+  assert_eq("palette.func",    c.func,    "#dcb872")
 end
 
 -- init: load() runs without error
@@ -92,6 +93,26 @@ local syntax_groups = {
 }
 for _, name in ipairs(syntax_groups) do
   assert_hl_set(name)
+end
+
+-- current nvim-treesitter capture names resolve to the intended palette colors
+do
+  local c = require("earthcode.palette")
+  local function fg_of(name)
+    local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
+    return hl.fg and string.format("#%06x", hl.fg) or nil
+  end
+  local expected = {
+    ["@variable.parameter"]   = c.parameter,
+    ["@variable.member"]      = c.fg,
+    ["@function"]             = c.func,
+    ["@function.method"]      = c.func,
+    ["@function.method.call"] = c.func,
+    ["@module"]               = c.type,
+  }
+  for name, color in pairs(expected) do
+    assert_eq(name .. " fg", fg_of(name), color)
+  end
 end
 
 -- LSP, diagnostics, diff

@@ -13,17 +13,18 @@ M.code_bg     = "#111111"  -- Near black — code block background
 M.ui_mid      = "#414833"  -- Ebony — separators, context indent (same hue as visual by design)
 
 -- Foreground / syntax
-M.fg          = "#c2c5aa"  -- Dry Sage (light) — main text, identifiers, functions
+M.fg          = "#c2c5aa"  -- Dry Sage (light) — main text, identifiers
+M.func        = "#dcb872"  -- Goldenrod — functions and methods
 M.keyword     = "#be8b58"  -- Toffee Brown (lightened for 7:1 contrast) — keywords
-M.string      = "#a68a64"  -- Camel — strings
-M.type        = "#b6ad90"  -- Khaki Beige — types, constants, numbers
+M.string      = "#a8b878"  -- Olive Green — strings
+M.type        = "#8fb3a0"  -- Lichen — types, constants, numbers
 M.parameter   = "#a4ac86"  -- Dry Sage (mid) — parameters
 M.punctuation = "#af6d32"  -- Saddle Brown (lightened for 5:1 contrast) — punctuation, operators
-M.comment     = "#727b53"  -- Dusty Olive (lightened for 4.6:1 contrast) — comments
+M.comment     = "#7f895c"  -- Dusty Olive (lightened for 5.5:1 contrast) — comments
 
 -- Accent colors (outside base palette)
 M.error       = "#ba5a5a"  -- Muted brick red (lightened for 4.7:1 contrast)
 M.warning     = "#b5803a"  -- Warm amber
-M.hint        = "#6b8c6b"  -- Forest green
+M.hint        = "#7e9d7e"  -- Forest green (lightened for 7:1 contrast)
 
 return M
