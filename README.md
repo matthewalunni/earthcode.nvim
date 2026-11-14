@@ -23,18 +23,18 @@ earthcode.nvim is a pure-Lua Neovim colorscheme with a black primary background 
 | UI chrome dark | `#333d29` | Charcoal Brown |
 | UI chrome mid | `#414833` | Ebony |
 | Foreground / identifiers / functions | `#c2c5aa` | Dry Sage (light) |
-| Keywords | `#936639` | Toffee Brown |
+| Keywords | `#be8b58` | Toffee Brown |
 | Strings | `#a68a64` | Camel |
 | Types / classes / constants / numbers | `#b6ad90` | Khaki Beige |
 | Parameters | `#a4ac86` | Dry Sage (mid) |
-| Punctuation / operators | `#7f4f24` | Saddle Brown |
-| Comments | `#656d4a` | Dusty Olive |
+| Punctuation / operators | `#af6d32` | Saddle Brown |
+| Comments | `#727b53` | Dusty Olive |
 
 #### Accent Colors
 
 | Role | Hex | Description |
 |---|---|---|
-| Error / diff delete fg | `#8b3a3a` | Muted brick red |
+| Error / diff delete fg | `#ba5a5a` | Muted brick red |
 | Warning / diff change | `#b5803a` | Warm amber |
 | Hint / info | `#6b8c6b` | Forest green |
 

@@ -14,15 +14,15 @@ M.ui_mid      = "#414833"  -- Ebony — separators, context indent (same hue as 
 
 -- Foreground / syntax
 M.fg          = "#c2c5aa"  -- Dry Sage (light) — main text, identifiers, functions
-M.keyword     = "#936639"  -- Toffee Brown — keywords
+M.keyword     = "#be8b58"  -- Toffee Brown (lightened for 7:1 contrast) — keywords
 M.string      = "#a68a64"  -- Camel — strings
 M.type        = "#b6ad90"  -- Khaki Beige — types, constants, numbers
 M.parameter   = "#a4ac86"  -- Dry Sage (mid) — parameters
-M.punctuation = "#7f4f24"  -- Saddle Brown — punctuation, operators
-M.comment     = "#656d4a"  -- Dusty Olive — comments
+M.punctuation = "#af6d32"  -- Saddle Brown (lightened for 5:1 contrast) — punctuation, operators
+M.comment     = "#727b53"  -- Dusty Olive (lightened for 4.6:1 contrast) — comments
 
 -- Accent colors (outside base palette)
-M.error       = "#8b3a3a"  -- Muted brick red
+M.error       = "#ba5a5a"  -- Muted brick red (lightened for 4.7:1 contrast)
 M.warning     = "#b5803a"  -- Warm amber
 M.hint        = "#6b8c6b"  -- Forest green
 

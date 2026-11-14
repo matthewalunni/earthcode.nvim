@@ -52,9 +52,9 @@ else
   end
   assert_eq("palette.bg",      c.bg,      "#000000")
   assert_eq("palette.fg",      c.fg,      "#c2c5aa")
-  assert_eq("palette.keyword", c.keyword, "#936639")
+  assert_eq("palette.keyword", c.keyword, "#be8b58")
   assert_eq("palette.string",  c.string,  "#a68a64")
-  assert_eq("palette.error",   c.error,   "#8b3a3a")
+  assert_eq("palette.error",   c.error,   "#ba5a5a")
   assert_eq("palette.warning", c.warning, "#b5803a")
   assert_eq("palette.hint",    c.hint,    "#6b8c6b")
 end
