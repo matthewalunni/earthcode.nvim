@@ -198,10 +198,11 @@ function M.load(c)
   hi("SnacksDashboardSpecial", { fg = c.parameter })
 
   -- ── Diff ───────────────────────────────────────────────────────────
-  hi("DiffAdd",    { fg = c.hint,    bg = c.diff_add_bg })
-  hi("DiffChange", { fg = c.warning, bg = c.diff_chg_bg })
-  hi("DiffDelete", { fg = c.error,   bg = c.diff_del_bg })
-  hi("DiffText",   { fg = c.fg,      bg = c.diff_chg_bg })
+  -- Background only on added/changed lines so syntax colours show through.
+  hi("DiffAdd",    { bg = c.diff_add_bg })
+  hi("DiffChange", { bg = c.diff_chg_bg })
+  hi("DiffText",   { bg = c.diff_txt_bg })
+  hi("DiffDelete", { fg = "#7a2e36", bg = c.diff_del_bg })
 end
 
 return M

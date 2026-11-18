@@ -43,7 +43,7 @@ if not palette_ok then
 else
   local required_keys = {
     "bg", "cursorline", "visual", "float_bg",
-    "diff_del_bg", "diff_add_bg", "diff_chg_bg", "ui_dark", "ui_mid",
+    "diff_del_bg", "diff_add_bg", "diff_chg_bg", "diff_txt_bg", "ui_dark", "ui_mid",
     "fg", "func", "keyword", "string", "type", "parameter", "punctuation",
     "comment", "error", "warning", "hint",
   }
@@ -132,6 +132,25 @@ local lsp_groups = {
 }
 for _, name in ipairs(lsp_groups) do
   assert_hl_set(name)
+end
+
+-- diff: added/changed lines keep syntax colours (no fg override), and the
+-- changed text inside a changed line stands out from the rest of the line
+do
+  local function hl(name) return vim.api.nvim_get_hl(0, { name = name }) end
+  for _, name in ipairs({ "DiffAdd", "DiffChange", "DiffText" }) do
+    if hl(name).fg ~= nil then
+      fail(name .. " should not set fg (it hides syntax highlighting)")
+    else
+      ok(name .. " no fg")
+    end
+    assert_not_nil(name .. " bg", hl(name).bg)
+  end
+  if hl("DiffText").bg == hl("DiffChange").bg then
+    fail("DiffText bg should differ from DiffChange bg")
+  else
+    ok("DiffText distinct")
+  end
 end
 
 -- telescope
